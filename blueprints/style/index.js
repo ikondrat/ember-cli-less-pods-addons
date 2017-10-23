@@ -55,7 +55,7 @@ function setSharedOpts(options) {
     opts.filePath = path.join(options.root, 'app/styles/pods');
     opts.importScssPath = path.join(opts.filePath, opts.importFile + '.less');
     opts.podsDir = options.podsDir ? opts.importFile + '/' : '';
-    opts.newLine = '@import "' + opts.podsDir + options.name + '/style";\n';
+    opts.newLine = '@import "' + options.name + '/style";\n';
     return opts;
 }
 
