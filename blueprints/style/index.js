@@ -3,6 +3,14 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var util = require('util');
 
+/**
+* Package can be named with scope but we need to have original name of the package
+* @param {string} text 
+*/
+function getPackageName(text) {
+    return text.split('/').pop(); 
+}
+
 module.exports = {
   podsDir: '',
 
@@ -33,7 +41,8 @@ module.exports = {
       addScssToImportFile(entity.name, {
           name: entity.name,
           root: options.project.root,
-          podsDir: this.podsDir
+          podsDir: this.podsDir,
+          projectName: getPackageName(options.project.pkg.name)
       });
   },
 
@@ -51,7 +60,7 @@ module.exports = {
 function setSharedOpts(options) {
     var opts = {};
 
-    opts.importFile = 'addons';
+    opts.importFile = options.projectName;
     opts.filePath = path.join(options.root, 'app/styles/pods');
     opts.importScssPath = path.join(opts.filePath, opts.importFile + '.less');
     opts.podsDir = options.podsDir ? opts.importFile + '/' : '';
