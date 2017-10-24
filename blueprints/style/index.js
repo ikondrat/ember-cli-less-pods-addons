@@ -51,7 +51,7 @@ module.exports = {
 function setSharedOpts(options) {
     var opts = {};
 
-    opts.importFile = options.podsDir ? options.podsDir.replace(/(\\|\/)$/, '') : 'index';
+    opts.importFile = 'addons';
     opts.filePath = path.join(options.root, 'app/styles/pods');
     opts.importScssPath = path.join(opts.filePath, opts.importFile + '.less');
     opts.podsDir = options.podsDir ? opts.importFile + '/' : '';
