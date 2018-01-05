@@ -1,4 +1,4 @@
-# ember-cli-less-pods
+# ember-cli-less-pods-addons
 
 Styling your pods with the less style file in the pod directory.
 Based on [ember-cli-sass-pods](https://github.com/justtal/ember-cli-sass-pods) implementation
